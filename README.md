@@ -1,6 +1,6 @@
 # COMS-4761-IRNEP
 
-All codes are running in R-3.4.1, co-expression network inference is memory intensive, so it's better to use machines with large memories.
+All codes and packages are running in R-3.4.1, co-expression network inference is memory intensive, so it's better to use machines with large memories (We were running in lab clusters).
 
 ### Code
 Data_prep.R: scripts for single-cell data pre-processing and quality control, filtering.
@@ -16,7 +16,7 @@ Brain data 1: GSE76381_ESMoleculeCounts.cef.txt.gz from https://www.ncbi.nlm.nih
 
 Brain data 2: GSE76381_EmbryoMoleculeCounts.cef.txt.gz from https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE76381
 
-Pancreas dataset: a sample subset from cluster 0: cluster0.matrix.rda
+Pancreas dataset: cluster0.matrix.rda is a sample subset from cluster 0
 
 Combined CHIP-seq evidence for TF-targets relationship: gene_chea_matrix.txt
 
