@@ -1,17 +1,22 @@
 # COMS-4761-IRNEP
 
-Data_prep.R 
 
-Scripts for single-cell data pre-processing
+### Code
+Data_prep.R: scripts for single-cell data pre-processing and quality control, filtering.
 
-Build_regulons.R  
+Build_regulons.R: scripts for building the co-expression network and finding the enriched motifs and pruning the regulons
 
-Scripts for building the co-expression network and finding the direct targets
+Viper_tsne.R: scripts for VIPER inference and t-SNE analysis, inputs are normalized expression data from Data_prep.R and regulons generated from Build_regulons.R
 
-viper.R 
+Seurat_and_tsne.R: scripts for algorithm evaluations and visualizations
 
-Scripts for VIPER inference, inputs are normalized expression data from Data_Prep.R and regulons generated from Build_regulons.R
+### Data
+Brain data 1: GSE76381_ESMoleculeCounts.cef.txt.gz from https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE76381
+Brain data 2: GSE76381_EmbryoMoleculeCounts.cef.txt.gz from https://www.ncbi.nlm.nih.gov/geo/query/acc.cgi?acc=GSE76381
+Pancreas dataset: a sample subset from cluster 0: cluster0.matrix.rda
+Combined CHIP-seq evidence for TF-targets relationship: gene_chea_matrix.txt
 
-Seurat_and_tsne.R    
+Regulons are directly inferred from corresponding expression dataset, if we are using multiple regulons, we combine regulons from two brain datasets, plus the GBM network from https://bioconductor.org/packages/release/data/experiment/html/aracne.networks.html
 
-Scripts for algorithm evaluations and visualizations
+### Figures
+All figures are included in Figures.pptx
