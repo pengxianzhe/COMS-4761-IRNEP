@@ -1,6 +1,6 @@
 # COMS-4761-IRNEP
 
-Data_Prep.R 
+Data_prep.R 
 
 Scripts for single-cell data pre-processing
 
