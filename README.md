@@ -24,3 +24,6 @@ Regulons are directly inferred from corresponding expression dataset, if we are 
 
 ### Figures
 All figures are included in Figures.pptx
+
+### Reports
+IRNEP_final_report.pdf
