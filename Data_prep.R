@@ -79,39 +79,3 @@ lbl.data <- data.frame(lbl.data[,which(cell.via <= 0.1)], stringsAsFactors = F)
 # Organized data
 save(all.data,file="all_cells_clean.rda")
 save(lbl.data,file="label_clean.rda")
-
-
-
-#### embronic data preparation (expression data and meta)
-
-EM <- read.table("GSE76381_EmbryoMoleculeCounts.cef.txt",sep="\t", header = T,stringsAsFactors = F)
-ESM <- read.table("GSE76381_ESMoleculeCounts.cef.txt",sep="\t", header = T,stringsAsFactors = F)
-
-CleanBrainData <- function(X) {
-# extract expression data
-X_meta <- X[c(1,2,3),]
-colnames(X) <- X[1,]
-X <- X[-c(1,2,3,4),]
-rownames(X)<- X[,1]
-X <- X[,-c(1,2)]
-X_name <- colnames(X)
-X <- apply(X, 1,as.numeric)
-X <- data.frame(t(X))
-colnames(X) <-X_name
-
-# extract meta data
-row.names(X_meta)<- X_meta[,2]
-X_meta <- X_meta[,-c(1,2)]
-colnames(X_meta)<- X_meta[1,]
-X_meta <- as.data.frame(t(X_meta))
-X_meta<-X_meta[,-1]
-return(list(exp=X,meta=X_meta))
-}
-
-EM_cleaned <- CleanBrainData(EM)
-EM <- EM_cleaned$exp
-EM_meta <- EM_cleaned$meta
-
-ESM_cleaned <- CleanBrainData(ESM)
-ESM <- ESM_cleaned$exp
-ESM_meta <- ESM_cleaned$meta
